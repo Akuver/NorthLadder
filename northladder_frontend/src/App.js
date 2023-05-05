@@ -12,10 +12,11 @@ function App() {
   const handleSearchClick = async (event) => {
     event.preventDefault();
     const response = await fetch(
-      `http://localhost:5000/search?inputText=${searchQuery}`
+      `http://localhost:6000/search?inputText=${searchQuery}`
     );
     const data = await response.json();
-    setSearchResult(data.result);
+    console.log("Query Sent");
+    setSearchResult("Result:" + data);
   };
 
   return (
